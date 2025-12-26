@@ -11,9 +11,7 @@ Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
 │   ├── input.txt
-│   └── README.md
-├── Day 2/
-│   └── ... (upcoming solutions)
+│   └── README.me
 └── README.md (this file)
 ```
 
