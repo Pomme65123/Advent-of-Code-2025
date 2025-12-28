@@ -10,13 +10,12 @@ Each day's solution is organized in its own folder:
 Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
-│   └── input.txt
 ├── Day 2 Part 1/
 │   ├── Main.java
-│   └── input.txt
 ├── Day 2 Part 2/
 │   ├── Main.java
-│   └── input.txt
+├── Day 3/
+│   ├── Main.java
 └── README.md (this file)
 ```
 
@@ -71,6 +70,8 @@ java Main
 ```
 
 Both programs process range data from `input.txt` and output the sum of all invalid IDs found using their respective validation criteria.
+
+### Day 3: Battery Joltage Calculator
 
 ## General Setup
 

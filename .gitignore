@@ -3,12 +3,22 @@ input.txt
 
 # Java compiled files
 *.class
+*.jar
+*.war
 
 # IDE files
 .vscode/
 .idea/
 *.iml
+*.project
+*.classpath
 
 # OS files
 .DS_Store
 Thumbs.db
+*.tmp
+*.swp
+
+# Build directories
+build/
+target/
