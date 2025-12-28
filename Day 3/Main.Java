@@ -7,22 +7,22 @@ import java.io.IOException;
 class Main {
 
     public static int findMaxVoltage (String bank) {
-
         int maxVoltage = 0;
 
         // Iterate through the String with pointers such as max_battery
         for (int i = 0; i < bank.length(); i++) {
             for (int j = i + 1; j < bank.length(); j++) {
-                char firstBattery = bank.charAt(i);
-                char secondBattery = bank.charAt(j);
-
-                // Combine the two digits together and assign them to max_battery
-                String combinedBattery = "" + firstBattery + secondBattery;
+                int firstDigit = bank.charAt(i) - '0';
+                int secondDigit = bank.charAt(j) - '0';
+                int voltage = firstDigit * 10 + secondDigit;
                 
-                // Convert from String to Integer
-                int voltage = Integer.parseInt(combinedBattery);
                 if (voltage > maxVoltage) {
                     maxVoltage = voltage;
+                }
+                
+                // 99 is BIS value
+                if (voltage == 99) {
+                    return 99;
                 }
             }
         }
