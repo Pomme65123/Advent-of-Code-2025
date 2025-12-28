@@ -30,8 +30,51 @@ class Main {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
+
+
+
+
+    // Helper Function if a number is invalid
+    public static boolean isInvalidId(long num) {
+
+        // Convert number to string
+        String str = String.valueOf(num);
+        int strLength = str.length();
+
+        // If odd length: false, if even length: split string in half
+        if (strLength % 2 == 1) return false;
+        
+        String firstHalf = str.substring(0, strLength / 2);
+        String secondHalf = str.substring(strLength / 2);
+
+        /*
+        System.out.println(firstHalf + " SPLIT " + secondHalf);
+        */
+
+        // Checks if strings are equal
+        // Apparently "==" compares if they are the same object in memory
+        return (firstHalf.equals(secondHalf));
+    }
+
+
+    public static long solver() {
+
+        long result = 0;
+
+        // Parse through input.txt
+        
+        // Split by delimiters
+        
+        // Iterate over the ranges and check if it's a valid ID using helper function
+        
+        // If invalid, add it to result
+        
+        return 0;
+    }
+
     
     public static void main(String[] args) {
         parseInput();
+        System.out.println(isInvalidId(123123));
     }
 }
