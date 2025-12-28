@@ -5,6 +5,7 @@ input.txt
 *.class
 *.jar
 *.war
+*.ear
 
 # IDE files
 .vscode/
@@ -12,13 +13,22 @@ input.txt
 *.iml
 *.project
 *.classpath
+.settings/
 
 # OS files
 .DS_Store
 Thumbs.db
 *.tmp
 *.swp
+*.log
 
 # Build directories
 build/
 target/
+dist/
+out/
+
+# Java specific
+*.hprof
+*.dump
+hs_err_pid*

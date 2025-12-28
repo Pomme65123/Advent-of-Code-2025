@@ -10,12 +10,16 @@ Each day's solution is organized in its own folder:
 Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
+│   └── input.txt
 ├── Day 2 Part 1/
 │   ├── Main.java
+│   └── input.txt
 ├── Day 2 Part 2/
 │   ├── Main.java
+│   └── input.txt
 ├── Day 3/
 │   ├── Main.java
+│   └── input.txt
 └── README.md (this file)
 ```
 
@@ -72,6 +76,22 @@ java Main
 Both programs process range data from `input.txt` and output the sum of all invalid IDs found using their respective validation criteria.
 
 ### Day 3: Battery Joltage Calculator
+
+**Problem**: Find maximum joltage from battery banks by selecting optimal battery pairs
+
+- **Battery Banks**: Each line represents a bank of batteries with joltage ratings 1-9
+- **Selection Rule**: Turn on exactly two batteries per bank (cannot rearrange)
+- **Joltage Calculation**: Two-digit number formed by selected batteries in order
+- **Goal**: Find maximum possible joltage from each bank and sum them
+
+#### Quick Start (Day 3)
+```bash
+cd "Day 3"
+javac Main.java
+java Main
+```
+
+The program reads battery bank data from `input.txt`, tries all possible pairs of batteries in each bank while maintaining their order, finds the maximum 2-digit joltage for each bank, and outputs the total joltage sum.
 
 ## General Setup
 

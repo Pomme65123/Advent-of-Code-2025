@@ -31,6 +31,7 @@ class Main {
     }
 
 
+
     public static int solver () {
         // Parse line by line through input.txt
 
@@ -52,6 +53,8 @@ class Main {
         return totalVoltage;
     }
 
+
+    
     public static void main () {
         System.out.println(solver());
     }
