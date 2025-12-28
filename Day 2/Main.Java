@@ -3,36 +3,6 @@ import java.io.File;
 import java.io.IOException;
 
 class Main {
-    
-    public static void parseInput() {
-        File file = new File("input.txt");
-        
-        try (Scanner scanner = new Scanner(file)) {
-            String line = scanner.nextLine();
-            String[] ranges = line.split(",");
-            
-            for (int i = 0; i < ranges.length; i++) {
-                String range = ranges[i];
-                String[] parts = range.split("-");
-                
-                if (parts.length == 2) {
-                    long start = Long.parseLong(parts[0]);
-                    long end = Long.parseLong(parts[1]);
-                    long rangeSize = end - start + 1;
-                    
-                    System.out.println("Range " + (i+1) + ": " + start + " to " + end + " (size: " + rangeSize + ")");
-                } else {
-                    System.out.println("Invalid range format: " + range);
-                }
-            }
-            
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
-        }
-    }
-
-
-
 
     // Helper Function if a number is invalid
     public static boolean isInvalidId(long num) {
@@ -52,9 +22,10 @@ class Main {
         */
 
         // Checks if strings are equal
-        // Apparently "==" compares if they are the same object in memory
+        // Apparently "==" compares if they are the same object in memory not if they are same literal
         return (firstHalf.equals(secondHalf));
     }
+
 
 
     public static long solver() {
@@ -62,19 +33,39 @@ class Main {
         long result = 0;
 
         // Parse through input.txt
+        File file = new File("input.txt");
+
+        try (Scanner scanner = new Scanner(file)){
+            String line = scanner.nextLine();
+            String [] ranges = line.split(",");
+
+            // Split by delimiters
+            
+            for (int i = 0; i < ranges.length; i++) {
+                String range = ranges[i];
+                String [] processed_ranges = range.split("-");
+                Long start = Long.parseLong(processed_ranges[0]);
+                Long end = Long.parseLong(processed_ranges[1]);
+
+                // Iterate over the ranges and check if it's a valid ID using helper function
+
+                for (long num = start; num <= end; num++) {
+                    // If invalid, add it to result
+                    if (isInvalidId(num)) {
+                        result += num;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
         
-        // Split by delimiters
-        
-        // Iterate over the ranges and check if it's a valid ID using helper function
-        
-        // If invalid, add it to result
-        
-        return 0;
+        return result;
     }
 
-    
+
+
     public static void main(String[] args) {
-        parseInput();
-        System.out.println(isInvalidId(123123));
+        System.out.println(solver());
     }
 }
