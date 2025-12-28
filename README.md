@@ -10,13 +10,10 @@ Each day's solution is organized in its own folder:
 Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
-│   └── input.txt
 ├── Day 2 Part 1/
 │   ├── Main.java
-│   └── input.txt
 ├── Day 2 Part 2/
 │   ├── Main.java
-│   └── input.txt
 └── README.md (this file)
 ```
 
