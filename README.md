@@ -11,7 +11,10 @@ Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
 │   └── input.txt
-├── Day 2/
+├── Day 2 Part 1/
+│   ├── Main.java
+│   └── input.txt
+├── Day 2 Part 2/
 │   ├── Main.java
 │   └── input.txt
 └── README.md (this file)
@@ -39,20 +42,35 @@ The program processes movement instructions from `input.txt`, updates position w
 
 ### Day 2: Invalid ID Validator
 
-**Problem**: Find and sum invalid IDs within given ranges
+#### Part 1: Split Half Pattern
+**Problem**: Find and sum invalid IDs where first half equals second half
 
 - **Invalid ID Definition**: Numbers with even digit count where first half equals second half
 - **Input Format**: Comma-separated ranges (e.g., "1233-1772,2-15")
 - **Goal**: Sum all invalid IDs across all ranges
 
-#### Quick Start (Day 2)
+#### Quick Start (Day 2 Part 1)
 ```bash
-cd "Day 2"
+cd "Day 2 Part 1"
 javac Main.java
 java Main
 ```
 
-The program processes range data from `input.txt`, validates each number in each range using the invalid ID criteria, and outputs the sum of all invalid IDs found.
+#### Part 2: Repeated Pattern
+**Problem**: Find and sum invalid IDs made of repeated digit sequences
+
+- **Invalid ID Definition**: Numbers consisting of some sequence repeated at least twice (e.g., 123123, 1212, 99)
+- **Input Format**: Same comma-separated ranges as Part 1
+- **Goal**: Sum all invalid IDs using the new repeated pattern criteria
+
+#### Quick Start (Day 2 Part 2)
+```bash
+cd "Day 2 Part 2"
+javac Main.java
+java Main
+```
+
+Both programs process range data from `input.txt` and output the sum of all invalid IDs found using their respective validation criteria.
 
 ## General Setup
 
