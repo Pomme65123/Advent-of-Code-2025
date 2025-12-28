@@ -10,8 +10,10 @@ Each day's solution is organized in its own folder:
 Advent of Coding/
 ├── Day 1/
 │   ├── Main.java
-│   ├── input.txt
-│   └── README.me
+│   └── input.txt
+├── Day 2/
+│   ├── Main.java
+│   └── input.txt
 └── README.md (this file)
 ```
 
@@ -19,7 +21,6 @@ Advent of Coding/
 
 ### Day 1: Circular Track Position Counter
 
-**Language**: Java  
 **Problem**: Track position on a circular track and count visits to position 0
 
 - **Starting Position**: 50
@@ -35,6 +36,23 @@ java Main
 ```
 
 The program processes movement instructions from `input.txt`, updates position with wraparound logic, and displays each move before outputting the final zero count.
+
+### Day 2: Invalid ID Validator
+
+**Problem**: Find and sum invalid IDs within given ranges
+
+- **Invalid ID Definition**: Numbers with even digit count where first half equals second half
+- **Input Format**: Comma-separated ranges (e.g., "1233-1772,2-15")
+- **Goal**: Sum all invalid IDs across all ranges
+
+#### Quick Start (Day 2)
+```bash
+cd "Day 2"
+javac Main.java
+java Main
+```
+
+The program processes range data from `input.txt`, validates each number in each range using the invalid ID criteria, and outputs the sum of all invalid IDs found.
 
 ## General Setup
 
