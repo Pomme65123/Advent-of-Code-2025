@@ -1,0 +1,14 @@
+# Advent of Code - Ignore input files
+input.txt
+
+# Java compiled files
+*.class
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db

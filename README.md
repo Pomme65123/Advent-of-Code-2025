@@ -56,9 +56,16 @@ The program processes range data from `input.txt`, validates each number in each
 
 ## General Setup
 
+### Input File Requirements
+**Important**: Each solution expects its input data to be named `input.txt` and placed in the respective day's folder. Make sure to:
+1. Download your personal input from [Advent of Code](https://adventofcode.com/2025)
+2. Save it as `input.txt` in the corresponding day folder
+3. Input files are personal to each participant and are excluded from version control
+
 ### Running Solutions
 1. Navigate to the specific day's folder
-2. Compile the source file (e.g., `javac Main.java`)
-3. Run the compiled program (e.g., `java Main`)
+2. Ensure your puzzle input is saved as `input.txt`
+3. Compile the source file (e.g., `javac Main.java`)
+4. Run the compiled program (e.g., `java Main`)
 
 *Advent of Code is an annual event created by [Eric Wastl](https://twitter.com/ericwastl)*
