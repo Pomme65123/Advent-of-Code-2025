@@ -1,20 +1,58 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
+
+
 class Main {
 
-    public static int solver() {
-        // Parse line by line through input.txt
+    public static int findMaxVoltage (String bank) {
 
-        // Convert from String to Integer
+        int maxVoltage = 0;
 
         // Iterate through the String with pointers such as max_battery
-        // max_battery will always be the 2nd digit of the result with 9 being the max
-        // can break through the loop if we find two 9's
+        for (int i = 0; i < bank.length(); i++) {
+            for (int j = i + 1; j < bank.length(); j++) {
+                char firstBattery = bank.charAt(i);
+                char secondBattery = bank.charAt(j);
 
-        // Combine the two digits together and assign them to max_battery (maybe have helper function for this)
+                // Combine the two digits together and assign them to max_battery
+                String combinedBattery = "" + firstBattery + secondBattery;
+                
+                // Convert from String to Integer
+                int voltage = Integer.parseInt(combinedBattery);
+                if (voltage > maxVoltage) {
+                    maxVoltage = voltage;
+                }
+            }
+        }
 
-        // Add max_battery to result
+        return maxVoltage;
     }
 
-    public static void main() {
 
+    public static int solver () {
+        // Parse line by line through input.txt
+
+        int totalVoltage = 0;
+        File file = new File("input.txt");
+
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                String bank = scanner.nextLine();
+                int maxVoltage = findMaxVoltage(bank);
+
+                // Add max_battery to result
+                totalVoltage += maxVoltage;
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return totalVoltage;
+    }
+
+    public static void main () {
+        System.out.println(solver());
     }
 }
