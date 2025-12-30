@@ -20,6 +20,9 @@ Advent of Coding/
 ├── Day 3/
 │   ├── Main.java
 │   └── input.txt
+├── Day 4/
+│   ├── Main.java
+│   └── input.txt
 └── README.md (this file)
 ```
 
@@ -92,6 +95,10 @@ java Main
 ```
 
 The program reads battery bank data from `input.txt`, tries all possible pairs of batteries in each bank while maintaining their order, finds the maximum 2-digit joltage for each bank, and outputs the total joltage sum.
+
+### Day 4: 
+
+
 
 ## General Setup
 
