@@ -9,6 +9,22 @@ import java.util.List;
 class Main {
 
 
+
+    public static int countAdjacents(List<String> grid, int row, int col) {
+        
+        // returns the amount of adjacent rolls
+        int count = 0;
+        
+        // implement 8-directional adjacency check
+        // (row-1,col-1), (row-1,col), (row-1,col+1),
+        // (row,col-1),                 (row,col+1),
+        // (row+1,col-1), (row+1,col), (row+1,col+1)
+        
+        return count;
+    }
+
+
+
     public static int solver () {
 
          // Store the inputs in an Array
