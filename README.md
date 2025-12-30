@@ -20,7 +20,7 @@ Advent of Coding/
 ├── Day 3/
 │   ├── Main.java
 │   └── input.txt
-├── Day 4/
+├── Day 4 Part 1/
 │   ├── Main.java
 │   └── input.txt
 ├── Day 4 Part 2/
