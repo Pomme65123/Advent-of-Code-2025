@@ -41,6 +41,11 @@ class Main {
 
 
     
+    // Need mutable data array
+
+    // Find accessible rolls (Helper)
+
+    // Have to remove until no more accessible rolls
     public static int solver () {
 
         int accessibleRolls = 0;
