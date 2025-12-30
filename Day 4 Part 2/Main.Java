@@ -10,12 +10,12 @@ class Main {
 
 
 
-    public static int countAdjacents(List<String> grid, int row, int col) {
+    public static int countAdjacents(char[][] grid, int row, int col) {
         
         // returns the amount of adjacent rolls
         int count = 0;
-        int rows = grid.size();
-        int cols = grid.get(0).length();
+        int rows = grid.length;
+        int cols = grid[0].length;
         
         // implement 8-directional adjacency check
         // (row-1,col-1), (row-1,col), (row-1,col+1),
@@ -30,13 +30,31 @@ class Main {
             int newCol = col + deltaCol[i];
 
             if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
-                if (grid.get(newRow).charAt(newCol) == '@') {
+                if (grid[newRow][newCol] == '@') {
                     count++;
                 }
             }
         }
         
         return count;
+    }
+
+
+
+    public static List<int[]> findAccessibleRolls(char[][] grid) {
+        List<int[]> accessible = new ArrayList<>();
+
+        for (int row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[0].length; col++) {
+                if (grid[row][col] == '@') {
+                    int adjacentCount = countAdjacents(grid, row, col);
+                    if (adjacentCount < 4) {
+                        accessible.add(new int[]{row, col});
+                    }
+                }
+            }
+        }
+        return accessible;
     }
 
 
@@ -48,37 +66,38 @@ class Main {
     // Have to remove until no more accessible rolls
     public static int solver () {
 
-        int accessibleRolls = 0;
-
-         // Store the inputs in an Array
-         List<String> grid = new ArrayList<>();
-
-        // Parse input from input.txt
+        int totalRemovedRolls = 0;
+        List<String> inputLines = new ArrayList<>();
         File file = new File("input.txt");
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
-                grid.add(scanner.nextLine());
-            }
-
-            for (int row = 0; row < grid.size(); row++) {
-                String currentRow = grid.get(row);
-                for (int col = 0; col < currentRow.length(); col++) {
-
-                    if (currentRow.charAt(col) == '@') {
-                        // Start helper function here
-                        int adjacentCount = countAdjacents(grid, row, col);
-                        if (adjacentCount < 4) {
-                            accessibleRolls++;
-                        }
-                    }
-                }
+                inputLines.add(scanner.nextLine());
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            return 0;
         }
 
-        return accessibleRolls;
+        int rows = inputLines.size();
+        int cols = inputLines.get(0).length();
+        char[][] grid = new char[rows][cols];
+        
+        for (int i = 0; i < rows; i++) {
+            grid[i] = inputLines.get(i).toCharArray();
+        }
+
+        while (true) {
+            List<int[]> accessibleRolls = findAccessibleRolls(grid);
+            if (accessibleRolls.isEmpty()) break;
+
+            for (int[] position : accessibleRolls) {
+                grid[position[0]][position[1]] = '.';
+                totalRemovedRolls++;
+            }
+        }
+
+        return totalRemovedRolls;
     }
 
 

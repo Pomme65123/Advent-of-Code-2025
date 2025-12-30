@@ -23,6 +23,9 @@ Advent of Coding/
 ├── Day 4/
 │   ├── Main.java
 │   └── input.txt
+├── Day 4 Part 2/
+│   ├── Main.java
+│   └── input.txt
 └── README.md (this file)
 ```
 
@@ -98,6 +101,7 @@ The program reads battery bank data from `input.txt`, tries all possible pairs o
 
 ### Day 4: Paper Roll Accessibility Counter
 
+#### Part 1: Static Accessibility Count
 **Problem**: Count accessible paper rolls in a storage grid
 
 - **Grid Format**: Each cell contains either a paper roll (`@`) or empty space
@@ -105,14 +109,31 @@ The program reads battery bank data from `input.txt`, tries all possible pairs o
 - **Adjacent Check**: Examines all 8 surrounding positions (top-left, top, top-right, left, right, bottom-left, bottom, bottom-right)
 - **Goal**: Count the total number of accessible paper rolls in the grid
 
-#### Quick Start (Day 4)
+#### Quick Start (Day 4 Part 1)
 ```bash
-cd "Day 4"
+cd "Day 4 Part 1"
 javac Main.java
 java Main
 ```
 
 The program reads the storage grid from `input.txt`, checks each paper roll's surroundings using 8-directional adjacency, counts those with fewer than 4 adjacent rolls, and outputs the total count of accessible rolls.
+
+#### Part 2: Cascading Paper Roll Removal
+**Problem**: Simulate removing accessible paper rolls until no more can be removed
+
+- **Cascading Effect**: Once accessible rolls are removed, previously inaccessible rolls may become accessible
+- **Removal Process**: Keep finding and removing all accessible rolls in each iteration
+- **Termination**: Stop when no more rolls can be accessed by forklifts
+- **Goal**: Count the total number of paper rolls that can be removed through this cascading process
+
+#### Quick Start (Day 4 Part 2)
+```bash
+cd "Day 4 Part 2"
+javac Main.java
+java Main
+```
+
+The program simulates the iterative removal process: finds all currently accessible rolls, removes them from the grid, then repeats until no more rolls are accessible, finally outputting the total count of removed rolls.
 
 
 
