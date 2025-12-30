@@ -96,7 +96,23 @@ java Main
 
 The program reads battery bank data from `input.txt`, tries all possible pairs of batteries in each bank while maintaining their order, finds the maximum 2-digit joltage for each bank, and outputs the total joltage sum.
 
-### Day 4: 
+### Day 4: Paper Roll Accessibility Counter
+
+**Problem**: Count accessible paper rolls in a storage grid
+
+- **Grid Format**: Each cell contains either a paper roll (`@`) or empty space
+- **Accessibility Rule**: A paper roll is accessible if it has fewer than 4 adjacent rolls (including diagonals)
+- **Adjacent Check**: Examines all 8 surrounding positions (top-left, top, top-right, left, right, bottom-left, bottom, bottom-right)
+- **Goal**: Count the total number of accessible paper rolls in the grid
+
+#### Quick Start (Day 4)
+```bash
+cd "Day 4"
+javac Main.java
+java Main
+```
+
+The program reads the storage grid from `input.txt`, checks each paper roll's surroundings using 8-directional adjacency, counts those with fewer than 4 adjacent rolls, and outputs the total count of accessible rolls.
 
 
 
