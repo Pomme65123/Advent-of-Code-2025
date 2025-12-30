@@ -20,10 +20,16 @@ Advent of Coding/
 ├── Day 3/
 │   ├── Main.java
 │   └── input.txt
-├── Day 4/
+├── Day 4 Part 1/
 │   ├── Main.java
 │   └── input.txt
 ├── Day 4 Part 2/
+│   ├── Main.java
+│   └── input.txt
+├── Day 5 Part 1/
+│   ├── Main.java
+│   └── input.txt
+├── Day 5 Part 2/
 │   ├── Main.java
 │   └── input.txt
 └── README.md (this file)
@@ -134,6 +140,42 @@ java Main
 ```
 
 The program simulates the iterative removal process: finds all currently accessible rolls, removes them from the grid, then repeats until no more rolls are accessible, finally outputting the total count of removed rolls.
+
+### Day 5: Fresh Ingredient Detector
+
+#### Part 1: Range-Based Freshness Check
+**Problem**: Determine which ingredient IDs are fresh based on ID ranges
+
+- **Input Format**: Fresh ingredient ID ranges (inclusive), blank line separator, then available ingredient IDs
+- **Range Format**: Each range is "start-end" (e.g., "3-5" includes IDs 3, 4, and 5)
+- **Overlap Handling**: Ranges can overlap; an ingredient is fresh if it falls within ANY range
+- **Goal**: Count how many of the available ingredient IDs are fresh
+
+#### Quick Start (Day 5 Part 1)
+```bash
+cd "Day 5 Part 1"
+javac Main.java
+java Main
+```
+
+The program parses the database file to extract fresh ID ranges and available ingredient IDs, then checks each available ID against all ranges to determine freshness, finally outputting the total count of fresh ingredients.
+
+#### Part 2: Total Fresh Range Count
+**Problem**: Count all ingredient IDs that fall within any fresh range (ignore available IDs section)
+
+- **Range Overlap**: Multiple ranges can overlap; ingredient IDs should not be double-counted
+- **Approach**: Merge overlapping ranges, then calculate total IDs in merged ranges
+- **Efficiency**: Uses range merging algorithm instead of iterating through billions of individual IDs
+- **Goal**: Count total number of ingredient IDs considered fresh by the ranges
+
+#### Quick Start (Day 5 Part 2)
+```bash
+cd "Day 5 Part 2"
+javac Main.java
+java Main
+```
+
+The program reads only the fresh ingredient ranges (ignores available IDs), sorts and merges overlapping ranges to avoid double-counting, then calculates the total count of ingredient IDs covered by the merged ranges.
 
 
 
