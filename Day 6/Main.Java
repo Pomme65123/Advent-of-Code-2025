@@ -19,7 +19,9 @@ class Main {
                                   .toArray(String[][]::new);
 
             int numColumns = data[0].length;
-            
+
+            // Identify the operator as '*' or '+'
+            // Sum or multiply the vertical
             for (int col = 0; col < numColumns; col++) {
                 String operator = data[data.length - 1][col];
                 
