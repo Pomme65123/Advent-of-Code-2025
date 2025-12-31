@@ -8,7 +8,10 @@ Each day's solution is organized in its own folder:
 
 ```
 Advent of Coding/
-├── Day 1/
+├── Day 1 Part 1/
+│   ├── Main.java
+│   └── input.txt
+├── Day 1 Part 2/
 │   ├── Main.java
 │   └── input.txt
 ├── Day 2 Part 1/
@@ -17,7 +20,10 @@ Advent of Coding/
 ├── Day 2 Part 2/
 │   ├── Main.java
 │   └── input.txt
-├── Day 3/
+├── Day 3 Part 1/
+│   ├── Main.java
+│   └── input.txt
+├── Day 3 Part 2/
 │   ├── Main.java
 │   └── input.txt
 ├── Day 4 Part 1/
@@ -39,21 +45,39 @@ Advent of Coding/
 
 ### Day 1: Circular Track Position Counter
 
-**Problem**: Track position on a circular track and count visits to position 0
+#### Part 1: End Position Zero Count
+**Problem**: Track position on a circular track and count visits to position 0 at rotation end
 
 - **Starting Position**: 50
 - **Track Size**: 100 positions (0-99), wrapping around
 - **Instructions**: `R` (right) and `L` (left) followed by distance
-- **Goal**: Count how many times position 0 is reached
+- **Goal**: Count how many times position 0 is reached at the end of rotations
 
-#### Quick Start (Day 1)
+#### Quick Start (Day 1 Part 1)
 ```bash
-cd "Day 1"
+cd "Day 1 Part 1"
 javac Main.java
 java Main
 ```
 
-The program processes movement instructions from `input.txt`, updates position with wraparound logic, and displays each move before outputting the final zero count.
+The program processes movement instructions from `input.txt`, updates position with wraparound logic, and counts only when rotations end at position 0.
+
+#### Part 2: All Zero Crossings Count  
+**Problem**: Count every time the dial points at 0 during any part of rotations
+
+- **Enhanced Counting**: Counts 0 crossings during rotation movement, not just end positions
+- **Method 0x434C49434B**: Security protocol requiring all zero crossings to be counted
+- **Step-by-Step Tracking**: Simulates each step of rotation to detect all 0 crossings
+- **Goal**: Count total number of times dial points at 0 during entire process
+
+#### Quick Start (Day 1 Part 2)
+```bash
+cd "Day 1 Part 2"
+javac Main.java
+java Main
+```
+
+The program simulates each rotation step-by-step, counting every time the dial crosses or lands on position 0 during the movement, providing the total count for the enhanced security protocol.
 
 ### Day 2: Invalid ID Validator
 
@@ -89,6 +113,7 @@ Both programs process range data from `input.txt` and output the sum of all inva
 
 ### Day 3: Battery Joltage Calculator
 
+#### Part 1: Two-Battery Selection
 **Problem**: Find maximum joltage from battery banks by selecting optimal battery pairs
 
 - **Battery Banks**: Each line represents a bank of batteries with joltage ratings 1-9
@@ -96,14 +121,32 @@ Both programs process range data from `input.txt` and output the sum of all inva
 - **Joltage Calculation**: Two-digit number formed by selected batteries in order
 - **Goal**: Find maximum possible joltage from each bank and sum them
 
-#### Quick Start (Day 3)
+#### Quick Start (Day 3 Part 1)
 ```bash
-cd "Day 3"
+cd "Day 3 Part 1"
 javac Main.java
 java Main
 ```
 
 The program reads battery bank data from `input.txt`, tries all possible pairs of batteries in each bank while maintaining their order, finds the maximum 2-digit joltage for each bank, and outputs the total joltage sum.
+
+#### Part 2: Twelve-Battery Selection
+**Problem**: Find maximum joltage by selecting exactly twelve batteries per bank
+
+- **Battery Banks**: Same format as Part 1, but banks are much longer
+- **Selection Rule**: Turn on exactly twelve batteries per bank (cannot rearrange)
+- **Joltage Calculation**: Twelve-digit number formed by selected batteries in order
+- **Algorithm**: Uses greedy approach to find lexicographically largest subsequence of length 12
+- **Goal**: Find maximum possible 12-digit joltage from each bank and sum them
+
+#### Quick Start (Day 3 Part 2)
+```bash
+cd "Day 3 Part 2"
+javac Main.java
+java Main
+```
+
+The program reads extended battery bank data from `input.txt`, uses a greedy subsequence selection algorithm to find the maximum 12-digit number from each bank while maintaining battery order, and outputs the total joltage sum.
 
 ### Day 4: Paper Roll Accessibility Counter
 

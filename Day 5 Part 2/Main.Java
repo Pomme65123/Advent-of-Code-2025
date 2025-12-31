@@ -63,7 +63,7 @@ class Main {
     }
 
     
-    public static void main(String[] args) {
+    public static void main(String[String[] args] args) {
         System.out.println(solver());
     }
 }
