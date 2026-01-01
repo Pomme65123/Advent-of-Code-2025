@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 
-class Main {
+class mainPartTwo {
 
     // Helper Function if a number is invalid
     public static boolean isInvalidId(long num) {

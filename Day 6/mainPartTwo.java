@@ -1,9 +1,8 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
-class Main {
+class mainPartTwo {
 
     // Helper function that solves the equations
     private static long solveProblem(char[][] grid, int startCol, int endCol) {

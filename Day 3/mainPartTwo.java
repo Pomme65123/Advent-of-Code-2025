@@ -4,7 +4,7 @@ import java.io.IOException;
 
 
 
-class Main {
+class mainPartTwo {
 
     public static long findMaxVoltage(String bank) {
         int n = bank.length();

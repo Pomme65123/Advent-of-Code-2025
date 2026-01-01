@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 
-class Main {
+class mainPartTwo {
 
     public static int countZeroCrossings(int start, char direction, int distance) {
         int position = start;

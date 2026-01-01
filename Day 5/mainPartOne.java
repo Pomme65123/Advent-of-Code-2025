@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 
-class Main {
+class mainPartOne {
 
 
     public static int solver () {

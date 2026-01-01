@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 
-class Main {
+class mainPartOne {
 
     public static void Solver() {
         File file = new File("input.txt");
