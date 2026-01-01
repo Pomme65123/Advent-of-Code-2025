@@ -72,6 +72,7 @@ class mainPartOne {
             Beam beam = activeBeams.poll();
 
             while (beam.row < grid.length) {
+                
                 // Beam leaves the grid
                 if (beam.col < 0 || beam.col >= grid[beam.row].length) break; 
                 if (grid[beam.row][beam.col] == '^') {
@@ -93,7 +94,8 @@ class mainPartOne {
         return splitCount;
     }
 
-    
+
+
     public static void main(String[] args) {
         System.out.println(solver());
     }
